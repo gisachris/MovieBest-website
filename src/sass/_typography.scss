@@ -1,17 +1,17 @@
 //fonts
 
-@mixin font-normal($size){
+@mixin font-normal($size) {
   font-size: $size;
   font-family: 'Roboto Slab', serif;
 }
 
-@mixin font-bold($size){
+@mixin font-bold($size) {
   font-size: $size;
   font-weight: bold;
   font-family: 'Roboto Slab', serif;
 }
 
-@mixin font-bolder($size){
+@mixin font-bolder($size) {
   font-size: $size;
   font-weight: bolder;
   font-family: 'Roboto Slab', serif;

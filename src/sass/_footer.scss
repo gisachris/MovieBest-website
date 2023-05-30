@@ -3,6 +3,7 @@
 
 .footer {
   @include font-normal(1rem);
+
   height: 10vh;
   width: 100%;
   background: $darkfooterColor;
