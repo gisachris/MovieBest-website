@@ -1,0 +1,18 @@
+@import 'background';
+@import 'header';
+@import 'main';
+@import 'colors';
+@import 'typography';
+@import 'footer';
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+html,
+body {
+  min-width: 100%;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

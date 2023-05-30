@@ -1,14 +1,13 @@
 import _ from 'lodash';
-import './style.css';
+//import '../assets/images/logoDone.png';
+import './sass/styles.scss';
 
- function component() {
-   const element = document.createElement('div');
+const caller = async () => {
+  const baseUrl = 'https://api.tvmaze.com/'
+  const resource = 'https://api.tvmaze.com/shows/14';
+  const request = await fetch(resource)
+  const responce = await request.json();
+  console.log(responce);
+}
 
-  // Lodash, now imported by this script
-   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-   element.classList.add('hello');
-
-   return element;
- }
-
- document.body.appendChild(component());
+caller();
