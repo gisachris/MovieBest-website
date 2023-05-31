@@ -31,7 +31,7 @@ const createCommentModalContent = (showDetails, appID) => {
   `;
 
   const commentForm = modal.querySelector('#comment-form');
-  commentForm.addEventListener('submit', (event) => submitComment(event, appID));
+  commentForm.addEventListener('submit', (event) => submitComment(event, appID, showDetails.id));
 
   return modal;
 };

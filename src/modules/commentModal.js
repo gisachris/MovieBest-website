@@ -3,7 +3,8 @@ import { createCommentModalContent } from './createCommentModalContent.js';
 import { displayModal, closeModal } from './modalHelpers.js';
 import { generateUniqueId } from './createID.js';
 
-const openCommentModal = async (showId) => {
+const openCommentModal = async (itemID) => {
+    // console.log('itemID:', itemID);
   try {        
     let appID = localStorage.getItem('uniqueId');
     if (!appID) {
@@ -11,15 +12,18 @@ const openCommentModal = async (showId) => {
       localStorage.setItem('uniqueId', appID);
     }
 
-    const showDetails = await fetchShowDetails(showId);
-    const modalContent = createCommentModalContent(showDetails, appID, submitComment);
+    const showDetails = await fetchShowDetails(itemID);
+    // console.log(showDetails);
+    const modalContent = createCommentModalContent(showDetails, appID, submitComment, itemID);
     displayModal(modalContent);
+    displayComments(appID, itemID);
   } catch (error) {
     console.error('Error fetching show details:', error);
   }
 };
 
 const submitComment = async (event, appID, itemID) => {
+    // console.log('itemID:', itemID);
   event.preventDefault();
   const commentForm = event.target;
   const nameInput = commentForm.querySelector('#name-input');
@@ -39,7 +43,7 @@ const submitComment = async (event, appID, itemID) => {
       username,
       comment,
     };
-
+    // console.log(commentData);
     const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/comments`, {
       method: 'POST',
       headers: {
@@ -55,16 +59,16 @@ const submitComment = async (event, appID, itemID) => {
     nameInput.value = '';
     commentInput.value = '';
 
-    displayComments(appID);
-    updateCommentsCounter(appID);
+    displayComments(appID, itemID);
+    // updateCommentsCounter(appID,itemID);
   } catch (error) {
     console.error('Error submitting comment:', error);
   }
 };
 
-const displayComments = async (appID) => {
+const displayComments = async (appID, itemID) => {
   try {
-    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/comments`);
+    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/comments?item_id=${itemID}`);
     if (!response.ok) {
       throw new Error('Failed to fetch comments');
     }
@@ -89,14 +93,16 @@ const displayComments = async (appID) => {
       `;
       commentsSection.appendChild(commentItem);
     });
+
+    updateCommentsCounter(appID, itemID);
   } catch (error) {
     console.error('Error displaying comments:', error);
   }
 };
 
-const updateCommentsCounter = async (appID) => {
+const updateCommentsCounter = async (appID, itemID) => {
   try {
-    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/comments`);
+    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/comments?item_id=${itemID}`);
     if (!response.ok) {
       throw new Error('Failed to fetch comments');
     }
