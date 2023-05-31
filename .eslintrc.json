@@ -16,6 +16,7 @@
     "eol-last": "off",
     "no-unused-vars":"off",
     "import/no-cycle":"off",
+    "no-plusplus":"off",
     "import/extensions": [ 1, {
       "js": "always", "json": "always"
     }]
