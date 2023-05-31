@@ -133,7 +133,7 @@ To run tests, run the following command:
 
 👤 **Gisa Chris**
 
-- GitHub: [@mailsg](https://github.com/gisachris)
+- GitHub: [@gisachris](https://github.com/gisachris)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
