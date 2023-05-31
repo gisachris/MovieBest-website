@@ -1,5 +1,6 @@
 import getShows from './retrieve.js';
 import heart from '../../assets/images/heart.png';
+import { openCommentModal } from './commentModal.js';
 
 let itemsPerPage = 6;
 const currentPage = 1;
@@ -29,7 +30,7 @@ const showCounter = (initialValue) => {
 const counter = showCounter(6);
 
 const homeCounter = (itemsPerPage) => {
-  movieSection.textContent = `movies(${itemsPerPage})`;
+  movieSection.textContent = `Movies(${itemsPerPage})`;
 };
 
 // Call the getShows() function on page load
@@ -85,6 +86,11 @@ const displayShows = async () => {
     const commentButton = document.createElement('button');
     commentButton.classList.add('comment');
     commentButton.textContent = 'Comment';
+    
+    commentButton.addEventListener('click', () => {
+      openCommentModal(show.id);
+    });
+
     action2.appendChild(commentButton);
     showActions.appendChild(action2);
   }
