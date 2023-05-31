@@ -40,7 +40,7 @@ const submitComment = async (event, appID, itemID) => {
       comment,
     };
 
-    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/comments/`, {
+    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/comments`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ const submitComment = async (event, appID, itemID) => {
 
 const displayComments = async (appID) => {
   try {
-    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/comments/`);
+    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/comments`);
     if (!response.ok) {
       throw new Error('Failed to fetch comments');
     }
@@ -96,7 +96,7 @@ const displayComments = async (appID) => {
 
 const updateCommentsCounter = async (appID) => {
   try {
-    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/comments/`);
+    const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/comments`);
     if (!response.ok) {
       throw new Error('Failed to fetch comments');
     }
