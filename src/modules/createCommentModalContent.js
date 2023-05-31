@@ -1,4 +1,4 @@
-import { submitComment } from "./commentModal.js";
+import { submitComment } from './commentModal.js';
 // import { displayModal, closeModal } from './modalHelpers.js';
 
 const createCommentModalContent = (showDetails, appID) => {
@@ -54,6 +54,5 @@ const createCommentSection = (comments) => {
 
   return commentItems.join('');
 };
-  
+
 export { createCommentModalContent };
-  

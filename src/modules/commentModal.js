@@ -4,8 +4,7 @@ import { displayModal, closeModal } from './modalHelpers.js';
 import { generateUniqueId } from './createID.js';
 
 const openCommentModal = async (itemID) => {
-    // console.log('itemID:', itemID);
-  try {        
+  try {
     let appID = localStorage.getItem('uniqueId');
     if (!appID) {
       appID = generateUniqueId();
@@ -13,7 +12,7 @@ const openCommentModal = async (itemID) => {
     }
 
     const showDetails = await fetchShowDetails(itemID);
-    // console.log(showDetails);
+
     const modalContent = createCommentModalContent(showDetails, appID, submitComment, itemID);
     displayModal(modalContent);
     displayComments(appID, itemID);
@@ -23,7 +22,6 @@ const openCommentModal = async (itemID) => {
 };
 
 const submitComment = async (event, appID, itemID) => {
-    // console.log('itemID:', itemID);
   event.preventDefault();
   const commentForm = event.target;
   const nameInput = commentForm.querySelector('#name-input');
@@ -43,7 +41,7 @@ const submitComment = async (event, appID, itemID) => {
       username,
       comment,
     };
-    // console.log(commentData);
+
     const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/comments`, {
       method: 'POST',
       headers: {
@@ -115,4 +113,6 @@ const updateCommentsCounter = async (appID, itemID) => {
   }
 };
 
-export { openCommentModal, submitComment, displayComments, updateCommentsCounter };
+export {
+  openCommentModal, submitComment, displayComments, updateCommentsCounter,
+};

@@ -86,11 +86,10 @@ const displayShows = async () => {
     const commentButton = document.createElement('button');
     commentButton.classList.add('comment');
     commentButton.textContent = 'Comment';
-    
+
     commentButton.addEventListener('click', () => {
       // console.log(show.id);
       openCommentModal(show.id);
-
     });
 
     action2.appendChild(commentButton);
