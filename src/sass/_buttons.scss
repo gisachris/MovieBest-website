@@ -1,0 +1,26 @@
+@import 'colors';
+@import 'typography';
+
+@mixin button-normal($size){
+  @include font-normal(1rem);
+  padding: 6px;
+  border-radius: 8px;
+  background-color: $primaryColor;
+  color: $darkColor;
+}
+
+@mixin button-semi($size){
+  @include font-normal(1rem);
+  padding: 10px;
+  border-radius: 8px;
+  background-color: $primaryOpColor;
+  color: $darkColor;
+}
+
+@mixin button-semi-clicked($size){
+  @include font-normal(1rem);
+  padding: 7px;
+  border-radius: 8px;
+  background-color: $darkColor;
+  color: $primaryColor;
+}
