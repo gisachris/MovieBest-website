@@ -101,7 +101,6 @@ const displayShows = async () => {
     showActions.appendChild(action2);
 
     commentButton.addEventListener('click', () => {
-      // console.log(show.id);
       openCommentModal(show.id);
     });
   }

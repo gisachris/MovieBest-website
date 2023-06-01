@@ -83,6 +83,44 @@
 
         .total-comments-section{
           text-align: center;
+          width: 100%;
+          
+
+          .comments-section {
+            max-width: 90%;
+            width: 90%;
+            height: 130px;
+            background-color: $primaryColor;
+            margin-left: 25px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;          
+            overflow-y: scroll;
+            padding-bottom: 5px;
+
+            .comment-item {
+              @include font-normal(1rem);
+              display: flex;
+              column-gap: 5px;
+              width: 100%;
+              padding-top: 10px;
+              padding-left: 6px;
+
+              .comment-username {
+                background-color: rgba(255, 255, 0, 0.555);
+                border-radius: 5px;
+                padding: 0px 5px;
+                width: 20%;
+                height: auto;
+              }
+
+              .comment-text{
+                margin: 0;
+                width: 47%;
+              }
+            }
+          }
         }
 
         .add-comment-section{
