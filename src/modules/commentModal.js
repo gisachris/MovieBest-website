@@ -1,5 +1,6 @@
-import { fetchShowDetails } from './fetchShowDetails.js';
-import { createCommentModalContent } from './createCommentModalContent.js';
+/* eslint-disable no-use-before-define, no-unused-vars */
+import fetchShowDetails from './fetchShowDetails.js';
+import createCommentModalContent from './createCommentModalContent.js';
 import { displayModal, closeModal } from './modalHelpers.js';
 import { generateUniqueId } from './createID.js';
 
@@ -57,8 +58,12 @@ const submitComment = async (event, appID, itemID) => {
     nameInput.value = '';
     commentInput.value = '';
 
+    // Clear the comments section to prevent duplication of comments
+    const commentsSection = document.querySelector('#comments-section');
+    commentsSection.innerHTML = '';
+
     displayComments(appID, itemID);
-    // updateCommentsCounter(appID,itemID);
+    updateCommentsCounter(appID, itemID);
   } catch (error) {
     console.error('Error submitting comment:', error);
   }
@@ -78,19 +83,20 @@ const displayComments = async (appID, itemID) => {
 
     if (comments.length === 0) {
       commentsSection.innerHTML = 'No comments yet.';
-      return;
-    }
-
-    comments.forEach((comment) => {
-      const commentItem = document.createElement('div');
-      commentItem.classList.add('comment-item');
-      commentItem.innerHTML = `
+      // updateCommentsCounter(appID, itemID);
+      // return;
+    } else {
+      comments.forEach((comment) => {
+        const commentItem = document.createElement('div');
+        commentItem.classList.add('comment-item');
+        commentItem.innerHTML = `
         <span class="comment-username">${comment.username}</span>
         <p class="comment-text">${comment.comment}</p>
         <span class="comment-date">${comment.creation_date}</span>
       `;
-      commentsSection.appendChild(commentItem);
-    });
+        commentsSection.appendChild(commentItem);
+      });
+    }
 
     updateCommentsCounter(appID, itemID);
   } catch (error) {

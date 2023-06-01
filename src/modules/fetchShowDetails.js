@@ -7,4 +7,4 @@ const fetchShowDetails = async (showId) => {
   return data;
 };
 
-export { fetchShowDetails };
+export default fetchShowDetails;

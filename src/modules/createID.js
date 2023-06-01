@@ -22,9 +22,14 @@ const generateUniqueId = async () => {
     return uniqueId;
   } catch (error) {
     console.error('Error generating unique ID:', error);
+    throw error;
   }
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
-  const appID = await generateUniqueId();
+  try {
+    const appID = await generateUniqueId();
+  } catch (error) {
+    console.error('Error initializing the app:', error);
+  }
 });

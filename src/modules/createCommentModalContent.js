@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define, no-unused-vars */
 import { submitComment } from './commentModal.js';
 // import { displayModal, closeModal } from './modalHelpers.js';
 
@@ -30,6 +31,10 @@ const createCommentModalContent = (showDetails, appID) => {
     </div>
   `;
 
+  modal.addEventListener('click', (event) => {
+    event.stopPropagation();
+  });
+
   const commentForm = modal.querySelector('#comment-form');
   commentForm.addEventListener('submit', (event) => submitComment(event, appID, showDetails.id));
 
@@ -47,7 +52,7 @@ const createCommentSection = (comments) => {
       <div class="comment-item">
         <span class="comment-username">${username}</span>
         <p class="comment-text">${text}</p>
-        <span class="comment-date">${formatDate(creationDate)}</span>
+        <span class="comment-date">${creationDate}</span>
       </div>
     `;
   });
@@ -55,4 +60,4 @@ const createCommentSection = (comments) => {
   return commentItems.join('');
 };
 
-export { createCommentModalContent };
+export default createCommentModalContent;

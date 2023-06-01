@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define, no-unused-vars */
 // Function to display the comment pop-up modal
 export const displayModal = (content) => {
   const modalOverlay = document.createElement('div');
