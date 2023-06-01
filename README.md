@@ -1,11 +1,3 @@
-<a name="readme-top"></a>
-
-<div align="center">
-
-  <h3><b>webpack template</b></h3>
-
-</div>
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -28,159 +20,166 @@
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
-# 📖 [webpack template] <a name="about-project"></a>
+<!-- PROJECT DESCRIPTION -->
 
-this is a webpack environment and structure
+# 📖 The Best Movie Collection App <a name="about-project"></a>
 
-## 🛠 Built With <a name="built-with">html and css</a>
 
-### Tech Stack <a name="tech-stack">html and css</a>
+**The Best Movie Collection App** website displays collection of world's best movies and shows. It allows you to submit your comments and likes. All data is preserved to the external Involvement API service.
 
-i buit this website using the html and css tech stack.
+## 🛠 Built With <a name="built-with"></a>
+
+### Tech Stack <a name="tech-stack"></a>
 
 <details>
-  <summary>structure</summary>
+  <summary>HTML/CSS/JavaScript</summary>
   <ul>
-    <li><a href="https://html.com/">html.com</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript</a></li>
   </ul>
 </details>
 
 <details>
-  <summary>styling</summary>
+  <summary>GitHub</summary>
   <ul>
-    <li><a href="https://css.com/">css.com</a></li>
+    <li><a href="https://github.com/">Github</a></li>
   </ul>
 </details>
+
+
+<!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
--this is a webpack template
+
+- **Interactive Webpage**
+- **Add Comments and Likes**
+- **API Interaction**
+- **Webpack**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Live Demo <a name="live-demo"></a>
-
-there is no live demo for this template
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
 
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
 
 
-Example command:
+- a browser
+- git
+- nodejs
 
-```sh
- install vs code or any other text editor.
-```
- 
 
 ### Setup
 
 Clone this repository to your desired folder:
 
 
-Example commands:
-
 ```sh
   cd my-folder
-  git clone https://github.com/gisachris/Webpack-template.git```
-
+  git clone git@github.com:mailsg/module-2-capstone-project.git
+```
 
 ### Install
 
 Install this project with:
 
 
-Example command:
-
 ```sh
-  node.js V16 and above
+  cd module-2-capstone-project
+  npm install
+  npm run build
+  npm start
 ```
-
 
 ### Usage
 
 To run the project, execute the following command:
 
 
-Example command:
 
 ```sh
-  use git bash to open in Vs code
+  Open dist/index.html in browser
+  or
+  Open with Live server in Vscode
 ```
-
 
 ### Run tests
 
 To run tests, run the following command:
 
-
-Example command:
-
 ```sh
-Run "npx stylelint "**/*.{css,scss}" --fix " to fix linters 
-```
+  npx stylelint "**/*.{css,scss}"
+  npx hint .
+  npx eslint .
+```  
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Author <a name="authors"></a>
+
+
+👤 **Sandeep Ghosh**
+
+- GitHub: [@mailsg](https://github.com/mailsg)
+
+👤 **Gisa Chris**
+
+- GitHub: [@gisachris](https://github.com/gisachris)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-## 👥 Authors <a name="authors"></a>
-
-
-👤 Gisa Chris
-
--GitHub: https://github.com/gisachris
-
--Twitter: https://twitter.com/_GisaChris
-
--LinkedIn: https://www.linkedin.com/in/gisa-chris-907948267/
-
-<span><b>project presentation</b></span>
-
-no presentation is available for this project yet.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
--adding more functionality to this template
+
+- [ ] **Profile Section**
+- [ ] **News Section**
+- [ ] **Join Section**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the issues page: https://github.com/gisachris/Webpack-template/issues
+Feel free to check the [https://github.com/mailsg/module-2-capstone-project/issues](../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project consider viewing my other profiles and sending job inquiries. thank you
+
+If you like this project give me a follow and/or a star
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to everyone who helped this project come to life even though they may not have contributed directly to the code builds
+
+I would like to thank Microverse for giving this opportunity to me to showcase my dev skills.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/gisachris/Webpack-template/blob/main/LICENSE) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
