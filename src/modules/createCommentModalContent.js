@@ -1,6 +1,5 @@
 /* eslint-disable no-use-before-define, no-unused-vars */
 import { submitComment } from './commentModal.js';
-// import { displayModal, closeModal } from './modalHelpers.js';
 
 const createCommentModalContent = (showDetails, appID) => {
   const modal = document.createElement('div');

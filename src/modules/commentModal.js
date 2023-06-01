@@ -18,7 +18,7 @@ const openCommentModal = async (itemID) => {
     displayModal(modalContent);
     displayComments(appID, itemID);
   } catch (error) {
-    console.error('Error fetching show details:', error);
+    // console.error('Error submitting comment:', error);
   }
 };
 
@@ -65,7 +65,7 @@ const submitComment = async (event, appID, itemID) => {
     displayComments(appID, itemID);
     updateCommentsCounter(appID, itemID);
   } catch (error) {
-    console.error('Error submitting comment:', error);
+    // console.error('Error submitting comment:', error);
   }
 };
 
@@ -84,23 +84,22 @@ const displayComments = async (appID, itemID) => {
     if (comments.length === 0) {
       commentsSection.innerHTML = 'No comments yet.';
       // updateCommentsCounter(appID, itemID);
-      // return;
-    } else {
-      comments.forEach((comment) => {
-        const commentItem = document.createElement('div');
-        commentItem.classList.add('comment-item');
-        commentItem.innerHTML = `
+      return;
+    }
+    comments.forEach((comment) => {
+      const commentItem = document.createElement('div');
+      commentItem.classList.add('comment-item');
+      commentItem.innerHTML = `
         <span class="comment-username">${comment.username}</span>
         <p class="comment-text">${comment.comment}</p>
         <span class="comment-date">${comment.creation_date}</span>
       `;
-        commentsSection.appendChild(commentItem);
-      });
-    }
+      commentsSection.appendChild(commentItem);
+    });
 
     updateCommentsCounter(appID, itemID);
   } catch (error) {
-    console.error('Error displaying comments:', error);
+    // console.error('Error submitting comment:', error);
   }
 };
 
@@ -115,7 +114,7 @@ const updateCommentsCounter = async (appID, itemID) => {
     const commentsCounter = document.querySelector('#comments-counter');
     commentsCounter.textContent = comments.length.toString();
   } catch (error) {
-    console.error('Error updating comments counter:', error);
+    // console.error('Error submitting comment:', error);
   }
 };
 
