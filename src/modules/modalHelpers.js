@@ -7,7 +7,7 @@ export const displayModal = (content) => {
   const modalContainer = document.createElement('div');
   modalContainer.classList.add('modal-container');
   modalContainer.appendChild(content);
-  document.body.appendChild(modalContainer);
+  modalOverlay.appendChild(modalContainer);
 
   const closeModalButton = modalContainer.querySelector('.close-button');
   closeModalButton.addEventListener('click', closeModal);

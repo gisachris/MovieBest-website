@@ -7,20 +7,20 @@ const createCommentModalContent = (showDetails, appID) => {
 
   modal.innerHTML = `
     <div class="modal-header">
+    <button class="close-button">X</button>
       <img class="show-image" src="${showDetails.image.medium}" alt="${showDetails.name}">
       <h2 class="show-name">${showDetails.name}</h2>
-      <button class="close-button">X</button>
+      <h3 class="sub-heading language">Language: ${showDetails.language}</h3>
+      <h3 class="sub-heading genre">Genres: ${showDetails.genres.join(', ')}</h3>
     </div>
     <div class="modal-body">
-      <h3 class="sub-heading">Language: ${showDetails.language}</h3>
-      <h3 class="sub-heading">Genres: ${showDetails.genres.join(', ')}</h3>
-      <h3 class="sub-heading">Schedule: ${showDetails.schedule.time} on ${showDetails.schedule.days.join(', ')}</h3>
+      <h3 class="sub-heading schedule">Schedule: ${showDetails.schedule.time} on ${showDetails.schedule.days.join(', ')}</h3>
       <div class="total-comments-section">
-        <h3 class="sub-heading">Total comments: <span id="comments-counter">${showDetails.comments ? showDetails.comments.length : 0}</span></h3>
+        <h3 class="sub-heading totalComments">Total comments: <span id="comments-counter">${showDetails.comments ? showDetails.comments.length : 0}</span></h3>
         <div id="comments-section" class="comments-section">${createCommentSection(showDetails.comments)}</div>
       </div>
       <div class="add-comment-section">
-        <h3 class="sub-heading">Add a comment</h3>
+        <h3 class="sub-heading addComment">Add a comment</h3>
         <form id="comment-form" class="comment-form">
           <input type="text" id="name-input" class="name-input" placeholder="Your name" required>
           <textarea id="comment-input" class="comment-input" placeholder="Your comment (max 500 characters)" maxlength="500" required></textarea>

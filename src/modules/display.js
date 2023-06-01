@@ -73,27 +73,37 @@ const displayShows = async () => {
 
     // Create the like action
     const action1 = document.createElement('li');
-    action1.classList.add('action');
+    action1.classList.add('action1');
+
     const like = document.createElement('img');
     like.classList.add('likeBefore');
     like.src = heart;
-    action1.appendChild(like);
+
+    const likesCounter = document.createElement('span');
+    likesCounter.classList.add('likesCounter');
+    likesCounter.textContent = 'likes()';
+    action1.append(like, likesCounter);
     showActions.appendChild(action1);
 
     // Create the comment button
     const action2 = document.createElement('li');
-    action2.classList.add('action');
+    action2.classList.add('action2');
+
     const commentButton = document.createElement('button');
     commentButton.classList.add('comment');
     commentButton.textContent = 'Comment';
+
+    const reserveButton = document.createElement('button');
+    reserveButton.classList.add('reserve');
+    reserveButton.textContent = 'Reservations';
+
+    action2.append(commentButton, reserveButton);
+    showActions.appendChild(action2);
 
     commentButton.addEventListener('click', () => {
       // console.log(show.id);
       openCommentModal(show.id);
     });
-
-    action2.appendChild(commentButton);
-    showActions.appendChild(action2);
   }
 };
 
