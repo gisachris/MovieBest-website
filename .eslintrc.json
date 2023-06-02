@@ -17,6 +17,7 @@
     "no-unused-vars":"off",
     "import/no-cycle":"off",
     "no-plusplus":"off",
+    "consistent-return":"off",
     "import/extensions": [ 1, {
       "js": "always", "json": "always"
     }]
