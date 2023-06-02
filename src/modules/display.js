@@ -1,6 +1,7 @@
 import getShows from './retrieve.js';
 import heart from '../../assets/images/heart.png';
 import { openCommentModal } from './commentModal.js';
+import { updater } from './likesCreator.js';
 
 let itemsPerPage = 6;
 const currentPage = 1;
@@ -46,7 +47,7 @@ const displayShows = async () => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = currentPage * itemsPerPage;
 
-  // Create a single showholder
+  // Create the showholders
   for (let i = startIndex; i < endIndex && i < response.length; i++) {
     const show = response[i];
 
@@ -77,11 +78,13 @@ const displayShows = async () => {
 
     const like = document.createElement('img');
     like.classList.add('likeBefore');
+    like.setAttribute('data-index', show.id);
     like.src = heart;
 
     const likesCounter = document.createElement('span');
     likesCounter.classList.add('likesCounter');
-    likesCounter.textContent = 'likes()';
+    likesCounter.setAttribute('data-index', show.id);
+    likesCounter.textContent = 'likes(0)';
     action1.append(like, likesCounter);
     showActions.appendChild(action1);
 
@@ -106,22 +109,33 @@ const displayShows = async () => {
   }
 };
 
-moreShows.addEventListener('click', () => {
-  counter.increment();
-  itemsPerPage = counter.increment();
-  displayShows();
-  homeCounter(itemsPerPage);
+moreShows.addEventListener('click', async () => {
+  try {
+    counter.increment();
+    itemsPerPage = counter.increment();
+    homeCounter(itemsPerPage);
+    await displayShows();
+    await updater();
+  } catch (error) { return error; }
 });
 
-window.addEventListener('load', () => {
-  counter.reset();
-  itemsPerPage = counter.reset();
-  displayShows();
-  homeCounter(itemsPerPage);
+window.addEventListener('load', async () => {
+  try {
+    counter.reset();
+    itemsPerPage = counter.reset();
+    homeCounter(itemsPerPage);
+    await displayShows();
+    await updater();
+  } catch (error) { return error; }
 });
 
 // Call to display shows on page load
-document.addEventListener('DOMContentLoaded', () => {
-  homeCounter(itemsPerPage);
-  displayShows();
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    homeCounter(itemsPerPage);
+    await displayShows();
+    await updater();
+  } catch (error) { return error; }
 });
+
+export default displayShows;

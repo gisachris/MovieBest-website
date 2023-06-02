@@ -1,4 +1,4 @@
-/* eslint-disable no-use-before-define, no-unused-vars */
+/* eslint-disable no-use-before-define */
 import fetchShowDetails from './fetchShowDetails.js';
 import createCommentModalContent from './createCommentModalContent.js';
 import { displayModal, closeModal } from './modalHelpers.js';
@@ -17,8 +17,9 @@ const openCommentModal = async (itemID) => {
     const modalContent = createCommentModalContent(showDetails, appID, submitComment, itemID);
     displayModal(modalContent);
     displayComments(appID, itemID);
+    return;
   } catch (error) {
-    // console.error('Error submitting comment:', error);
+    return error;
   }
 };
 
@@ -31,6 +32,7 @@ const submitComment = async (event, appID, itemID) => {
   const username = nameInput.value.trim();
   const comment = commentInput.value.trim();
 
+  /* eslint-disable no-alert */
   if (username === '' || comment === '') {
     alert('Please enter your name and comment');
     return;
@@ -64,8 +66,9 @@ const submitComment = async (event, appID, itemID) => {
 
     displayComments(appID, itemID);
     updateCommentsCounter(appID, itemID);
+    return;
   } catch (error) {
-    // console.error('Error submitting comment:', error);
+    return error;
   }
 };
 
@@ -83,7 +86,6 @@ const displayComments = async (appID, itemID) => {
 
     if (comments.length === 0) {
       commentsSection.innerHTML = 'No comments yet.';
-      // updateCommentsCounter(appID, itemID);
       return;
     }
     comments.forEach((comment) => {
@@ -98,8 +100,9 @@ const displayComments = async (appID, itemID) => {
     });
 
     updateCommentsCounter(appID, itemID);
+    return;
   } catch (error) {
-    // console.error('Error submitting comment:', error);
+    return error;
   }
 };
 
@@ -114,7 +117,7 @@ const updateCommentsCounter = async (appID, itemID) => {
     const commentsCounter = document.querySelector('#comments-counter');
     commentsCounter.textContent = comments.length.toString();
   } catch (error) {
-    // console.error('Error submitting comment:', error);
+    return error;
   }
 };
 
