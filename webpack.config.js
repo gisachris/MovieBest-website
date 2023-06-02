@@ -9,7 +9,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template:'./src/index.html',
+      template: './src/index.html',
     }),
   ],
   output: {
@@ -20,8 +20,26 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
     ],
   },

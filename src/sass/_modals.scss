@@ -1,0 +1,168 @@
+@import 'colors';
+@import 'typography';
+@import 'buttons';
+
+.modal-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: $fadingBlack;
+  min-width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(6px);
+
+  .modal-container {
+    background-color: $primaryOpColor;
+    width: 60%;
+    height: 600px;
+    position: relative;
+    z-index: 3;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .comment-modal{
+      display: flex;
+      width: 100%;
+      height: 100%;
+
+      .modal-header{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.275);
+
+        .close-button{
+          position: relative;
+          align-self: flex-start;
+          @include font-button(1.2rem);
+          @include closeButton();
+          margin-bottom: 0px;
+        }
+
+        .show-image{
+          margin-top: 20px;
+          box-shadow: 2px 2px 5px black;
+          width: 60%;
+        }
+
+        .show-name{
+          @include font-normal(1.4rem);
+          text-decoration: underline;
+        }
+
+        .language {
+          @include font-normal(1rem);
+        }
+
+        .genre{
+          @include font-normal(1rem);
+        }
+      }
+  
+      .modal-body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        margin-top: 50px;
+
+        .sub-heading{
+          @include font-normal(1rem);
+        }
+
+        .total-comments-section{
+          text-align: center;
+          width: 100%;
+          
+
+          .comments-section {
+            max-width: 90%;
+            width: 90%;
+            height: 130px;
+            background-color: $primaryColor;
+            margin-left: 25px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;          
+            overflow-y: scroll;
+            padding-bottom: 5px;
+
+            .comment-item {
+              @include font-normal(1rem);
+              display: flex;
+              column-gap: 5px;
+              width: 100%;
+              padding-top: 10px;
+              padding-left: 6px;
+
+              .comment-username {
+                background-color: rgba(255, 255, 0, 0.555);
+                border-radius: 5px;
+                padding: 0px 5px;
+                width: 20%;
+                height: auto;
+              }
+
+              .comment-text{
+                margin: 0;
+                width: 47%;
+              }
+            }
+          }
+        }
+
+        .add-comment-section{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 90%;
+
+          .addComment {
+            text-align: center;
+            text-decoration: underline;
+          }
+
+          form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            row-gap: 10px;
+
+            #name-input {
+              width: 70%;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              border-radius: 5px;
+            }
+
+            #comment-input {
+              width: 90%;
+              border-radius: 5px;
+              height: 150px;
+            }
+
+            .submit-button {
+              @include submitButton(1rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}

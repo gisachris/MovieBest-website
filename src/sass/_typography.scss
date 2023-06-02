@@ -1,0 +1,23 @@
+//fonts
+
+@mixin font-normal($size) {
+  font-size: $size;
+  font-family: 'Roboto Slab', serif;
+}
+
+@mixin font-bold($size) {
+  font-size: $size;
+  font-weight: bold;
+  font-family: 'Roboto Slab', serif;
+}
+
+@mixin font-bolder($size) {
+  font-size: $size;
+  font-weight: bolder;
+  font-family: 'Roboto Slab', serif;
+}
+
+@mixin font-button($size) {
+  font-size: $size;
+  font-weight: bolder;
+}

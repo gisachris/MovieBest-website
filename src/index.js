@@ -1,14 +1,10 @@
 import _ from 'lodash';
-import './style.css';
+import './sass/styles.scss';
+import logo from '../assets/images/logoDone.png';
+import './modules/retrieve.js';
+import './modules/display.js';
+import './modules/createID.js';
+import './modules/likesCreator.js';
 
- function component() {
-   const element = document.createElement('div');
-
-  // Lodash, now imported by this script
-   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-   element.classList.add('hello');
-
-   return element;
- }
-
- document.body.appendChild(component());
+const logoImage = document.querySelector('.logo');
+logoImage.src = logo;

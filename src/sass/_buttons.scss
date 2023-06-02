@@ -1,0 +1,41 @@
+@import 'colors';
+@import 'typography';
+
+@mixin button-normal($size){
+  @include font-normal(1rem);
+  padding: 6px;
+  border-radius: 8px;
+  background-color: $primaryColor;
+  color: $darkColor;
+}
+
+@mixin button-semi($size){
+  @include font-normal(1rem);
+  padding: 10px;
+  border-radius: 8px;
+  background-color: $primaryOpColor;
+  color: $darkColor;
+}
+
+@mixin button-semi-clicked($size){
+  @include font-normal(1rem);
+  padding: 7px;
+  border-radius: 8px;
+  background-color: $darkColor;
+  color: $primaryColor;
+}
+
+@mixin closeButton(){
+  background-color: transparent;
+  border: 0;
+  margin: 10px;
+  color: white;
+}
+
+@mixin submitButton($size){
+  background-color: $secondaryColor;
+  color: $primaryColor;
+  border-radius: 6px;
+  @include font-normal($size);
+  padding: 3px 30px;
+}
