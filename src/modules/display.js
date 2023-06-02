@@ -78,13 +78,13 @@ const displayShows = async () => {
 
     const like = document.createElement('img');
     like.classList.add('likeBefore');
-    like.setAttribute('data-index',show.id);
+    like.setAttribute('data-index', show.id);
     like.src = heart;
 
     const likesCounter = document.createElement('span');
     likesCounter.classList.add('likesCounter');
-    likesCounter.setAttribute('data-index',show.id);
-    likesCounter.textContent = "likes(0)";
+    likesCounter.setAttribute('data-index', show.id);
+    likesCounter.textContent = 'likes(0)';
     action1.append(like, likesCounter);
     showActions.appendChild(action1);
 
@@ -107,36 +107,35 @@ const displayShows = async () => {
       openCommentModal(show.id);
     });
   }
-
 };
 
-moreShows.addEventListener('click', async() => {
-  try{
-  counter.increment();
-  itemsPerPage = counter.increment();
-  await displayShows();
-  await updater();
-  homeCounter(itemsPerPage);
-}catch(error){return error}
+moreShows.addEventListener('click', async () => {
+  try {
+    counter.increment();
+    itemsPerPage = counter.increment();
+    homeCounter(itemsPerPage);
+    await displayShows();
+    await updater();
+  } catch (error) { return error; }
 });
 
-window.addEventListener('load', async() => {
+window.addEventListener('load', async () => {
   try {
-  counter.reset();
-  itemsPerPage = counter.reset();
-  await displayShows();
-  await updater();
-  homeCounter(itemsPerPage);
-}catch(error){return error}
+    counter.reset();
+    itemsPerPage = counter.reset();
+    homeCounter(itemsPerPage);
+    await displayShows();
+    await updater();
+  } catch (error) { return error; }
 });
 
 // Call to display shows on page load
-document.addEventListener('DOMContentLoaded', async() => {
+document.addEventListener('DOMContentLoaded', async () => {
   try {
-  homeCounter(itemsPerPage);
-  await displayShows();
-  await updater();
-}catch(error){return error};
+    homeCounter(itemsPerPage);
+    await displayShows();
+    await updater();
+  } catch (error) { return error; }
 });
 
 export default displayShows;

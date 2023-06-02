@@ -18,10 +18,8 @@ const generateUniqueId = async () => {
 
       localStorage.setItem('uniqueId', uniqueId);
     }
-
     return uniqueId;
   } catch (error) {
-    // console.error('Error generating unique ID:', error);
     throw new Error(`${error}`);
   }
 };
@@ -30,7 +28,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     const appID = await generateUniqueId();
   } catch (error) {
-    // console.error('Error initializing the app:', error);
-    // throw error;
+    return error;
   }
 });
