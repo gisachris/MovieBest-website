@@ -27,6 +27,7 @@ const generateUniqueId = async () => {
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     const appID = await generateUniqueId();
+    return appID;
   } catch (error) {
     return error;
   }

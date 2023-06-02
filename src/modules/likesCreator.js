@@ -2,10 +2,9 @@ import heartLiked from '../../assets/images/heartLiked.png';
 import getShows from './retrieve.js';
 import displayShows from './display.js';
 
-const appID = localStorage.getItem('uniqueId');
-
 // create a like
-const createLike = async (appID, showID) => {
+const createLike = async (showID) => {
+  const appID = localStorage.getItem('uniqueId');
   const resource = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/likes/`;
 
   const init = {
@@ -25,6 +24,7 @@ const createLike = async (appID, showID) => {
 };
 
 const getLikes = async () => {
+  const appID = localStorage.getItem('uniqueId');
   const resource = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/likes`;
 
   const request = await fetch(resource);
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const button = event.target.closest('.likeBefore');
       const buttonID = button.dataset.index;
-      await createLike(appID, buttonID);
+      await createLike(buttonID);
       await updater();
     } catch (error) {
       return error;

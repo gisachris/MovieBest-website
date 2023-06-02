@@ -5,6 +5,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [👩‍💻 Presentation](#Presentation)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -57,6 +58,21 @@
 - **Webpack**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+You can checkout the live demo below 👍
+
+https://gisachris.github.io/module-2-capstone-project/dist
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Project Presentation <a name="Presentation"></a>
+You can checkout the presentation below 👍
+
+https://drive.google.com/file/d/15RyaoHLv8E6QsW1W8sFI1lp7-90jyNJ9/view?usp=drive_link
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 <!-- GETTING STARTED -->
