@@ -62,7 +62,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 You can checkout the live demo below 👍
 
-https://gisachris.github.io/module-2-capstone-project/dist
+https://moviebest.onrender.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
